@@ -1783,7 +1783,7 @@ EVENT SPRITETYPE2
   TABLEFALL
 
   IF AIRBORNE > 0		; If in air
-    USER			; Noise
+    USER 0			; Noise
     SPRITERIGHT			; Move right
     SPRITERIGHT
   ELSE
@@ -2180,6 +2180,7 @@ EVENT INTROMENU
   LET D 0
   LET Z 0
   LET LIVES 3
+  USER 1
 
 ;---------------------------------------------------------------
 ; Game initialisation
@@ -2232,7 +2233,7 @@ EVENT RESTARTSCREEN
   DELAY 100
   AT 11,18
   PUTBLOCK 8
-  USER				; Noise
+  USER 0			; Noise
   DELAY 50
 
   PAPER 2			; Clear screen
@@ -2382,6 +2383,7 @@ EVENT NEWHIGHSCORE
 
 EVENT COLLECTBLOCK
 
+  BEEP 20
   SCORE 8			; Add 10 to score
   AT 1,8			; Showscore
   PAPER 2
